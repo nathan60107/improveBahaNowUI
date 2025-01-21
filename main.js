@@ -63,6 +63,7 @@ function action() {
         const userHeadshot = elements[j].querySelector(".user-headshot");
         if (userHeadshot) {
           userHeadshot.style.visibility = "hidden";
+          userHeadshot.style.height = 0;
         }
       }
     }
