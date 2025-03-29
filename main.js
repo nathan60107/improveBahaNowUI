@@ -3,7 +3,7 @@
 // @description  修改Now的樣式，讓他在網頁版從無法直視變得勉強可看
 // @namespace    nathan60107
 // @author       nathan60107(貝果)
-// @version      1.2.2
+// @version      1.2.3
 // @homepage     https://home.gamer.com.tw/profile/index_creation.php?owner=nathan60107&folder=425332
 // @match        https://forum.gamer.com.tw/B.php*
 // @match        https://now.gamer.com.tw/chat_list.php*
@@ -68,6 +68,11 @@ function handleLayout() {
     document.querySelector("#BH-slave, .now_chatroom-container"),
     { childList: true, subtree: true }
   )
+
+  document.addEventListener("focus", function () {
+    if (document.hidden) return
+    document.getElementById("msg_input")?.focus()
+  })
 })()
 
 /* Ref:
