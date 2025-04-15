@@ -3,7 +3,7 @@
 // @description  修改Now的樣式，讓他在網頁版從無法直視變得勉強可看
 // @namespace    nathan60107
 // @author       nathan60107(貝果)
-// @version      1.2.3
+// @version      1.2.4
 // @homepage     https://home.gamer.com.tw/profile/index_creation.php?owner=nathan60107&folder=425332
 // @match        https://forum.gamer.com.tw/B.php*
 // @match        https://now.gamer.com.tw/chat_list.php*
@@ -30,7 +30,7 @@ GM_addStyle(`
 `)
 
 function handleLayout() {
-  const elements = document.querySelectorAll("[data-uid]")
+  const elements = document.querySelectorAll(".msg_container")
 
   for (let i = 0; i < elements.length - 1; i++) {
     const current = elements[i]
