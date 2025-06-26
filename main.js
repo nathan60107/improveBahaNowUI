@@ -3,7 +3,7 @@
 // @description  修改Now的樣式，讓他在網頁版從無法直視變得勉強可看
 // @namespace    nathan60107
 // @author       nathan60107(貝果)
-// @version      1.2.5
+// @version      1.2.6
 // @homepage     https://home.gamer.com.tw/profile/index_creation.php?owner=nathan60107&folder=425332
 // @match        https://forum.gamer.com.tw/B.php*
 // @match        https://now.gamer.com.tw/chat_list.php*
@@ -59,6 +59,16 @@ function handleLayout() {
       }
     }
   }
+
+  const photos = document.querySelectorAll(".message.is-photo")
+  photos.forEach(photo => {
+    const a = photo.querySelector("a")
+    const img = a?.querySelector("img")
+    if (a && img && img.src) {
+      a.href = img.src
+      a.onclick = (e) => e.preventDefault()
+    }
+  })
 }
 
 ;(async function () {
